@@ -11,6 +11,25 @@ The theme is from [chrisrhymes/bulma-clean-theme](https://github.com/chrisrhymes
 e
 ## Setup for local development
 
+#### Docker setup
+
+If you use docker, the following line will build and serve the site locally:
+
+```bash
+docker run --rm -v "$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll:3.8 jekyll serve
+```
+
+If you want to enable LiveReload (pages automatically reload when jekyll rebuilds after detecting changes), then use this instead:
+
+```bash
+docker run --rm -v "$PWD:/srv/jekyll" \
+           -p 4000:4000 -p 35729:35729 \
+           -it jekyll/jekyll:3.8 \
+           jekyll serve --livereload
+```
+
+#### Standard setup
+
 Visit [this page](https://jekyllrb.com/docs/installation/) for information about installing Ruby if your current version is too old; the instructions there form the basis for what you see here, and come in variants for all major operating systems.
 You should have Ruby 2.4+ for Jekyll. Since versions of macOS before Catalina with 2.3 (and Apple is dropping scripting language from macOS in the future), you may want a newer version even on a mac. You can use rbenv to manage multiple ruby versions. On macOS with homebrew, you'll want:
 
@@ -18,7 +37,14 @@ You should have Ruby 2.4+ for Jekyll. Since versions of macOS before Catalina wi
 brew install rbenv
 ```
 
-You'll need to run `rbenv init` and follow the instructions for your current shell. After you've installed rbenv on your system, use:
+You'll need to run:
+
+```bash
+rbenv init
+# Prints out instructions
+```
+
+and follow the instructions for your current shell. After you've installed rbenv on your system, use:
 
 ```bash
 rbenv install 2.7.0
