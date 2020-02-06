@@ -97,8 +97,13 @@ bundle install
 Now, you can use `bundle exec` to run a command in the new environment you just created, such as:
 
 ```bash
-bundle exec jeykyll serve
+bundle exec jekyll serve
 ```
 
 This will incrementally rebuild if anything changes in your directory. Exit with Control-C.
+
+
+### Template
+
+Template is available here: <https://github.com/henryiii/project_site_template>
 
